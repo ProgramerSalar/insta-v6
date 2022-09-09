@@ -2,7 +2,7 @@
 
 import NextAuth from "next-auth"
 import GoogleProvider from "next-auth/providers/google"
-export const NextAuth = {
+export default NextAuth({
   // Configure one or more authentication providers
   providers: [
     GoogleProvider({
@@ -11,5 +11,8 @@ export const NextAuth = {
     }),
     // ...add more providers here
   ],
-}
-export default NextAuth(authOptions)
+  pages:{
+    signIn:"/auth/signin"
+  }
+ 
+})
