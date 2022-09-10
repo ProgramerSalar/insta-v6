@@ -17,7 +17,7 @@ export default function Header(){
                     src="https://download.logo.wine/logo/Facebook/Facebook-Logo.wine.png"
                     width={400}
                     height={150}
-                    className="object-contain"/>
+                    className="object-contain hover:scale-150 transition-transform-200"/>
                 </div>
                 <div className="relative lg:hidden cursor-pointer">
                     <Image
@@ -41,7 +41,7 @@ export default function Header(){
                     {session ? (
                         <>
                         <PlusIcon className="h-6 cursor-pointer hover:scale-125 transition-transform-200 ease-out"/>
-                        <img src={session.user.image}
+                        <img className="h-16 rounded-full cursor-pointer hover:scale-125 transition-transform-200" src={session.user.image}
                         onClick={signOut}/>
                         
                         </>
