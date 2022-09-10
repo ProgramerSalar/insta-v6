@@ -5,6 +5,7 @@ import React from "react"
 import Head from "next/head"
 import Header from "../components/header"
 import Feed from "../components/Feed"
+import UploadModal from "../components/UploadModal"
 
 export default function Home(){
   return(
@@ -23,6 +24,10 @@ export default function Home(){
 
       {/* feed  */}
       <Feed/>
+
+
+      {/* model  */}
+      <UploadModal/>
         
       </div>
      
