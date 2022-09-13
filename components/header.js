@@ -6,11 +6,13 @@ import { MagnifyingGlassIcon , PlusIcon , HomeIcon } from '@heroicons/react/24/s
 import { useSession , signIn , signOut } from "next-auth/react";
 import { useRecoilState } from "recoil";
 import { modalState } from "../atom/modalAtom";
+import { useRouter } from "next/router";
 
 
 export default function Header(){
     const {data:session} = useSession();
     const [open , setOpen ] = useRecoilState(modalState);
+    const router = useRouter();
     
 
     return(
@@ -21,14 +23,16 @@ export default function Header(){
                     src="https://download.logo.wine/logo/Facebook/Facebook-Logo.wine.png"
                     width={400}
                     height={150}
-                    className="object-contain hover:scale-150 transition-transform-200"/>
+                    className="object-contain hover:scale-150 transition-transform-200"
+                    onClick={()=>router.push("/")}/>
                 </div>
                 <div className="relative lg:hidden cursor-pointer">
                     <Image
                     src="https://upload.wikimedia.org/wikipedia/en/thumb/0/04/Facebook_f_logo_%282021%29.svg/1200px-Facebook_f_logo_%282021%29.svg.png"
                     width={100}
                     height={100}
-                    className="object-contain"/>
+                    className="object-contain"
+                    onClick={()=>router.push("/")}/>
                 </div>
                     {/* middle  */}
                     <div className="">
@@ -40,7 +44,8 @@ export default function Header(){
                 
 
                 <div className="flex space-x-4 items-center">
-                    <HomeIcon className="h-6 hidden md:inline-flex cursor-pointer hover:scale-125 transition-transform-200 ease-out"/>
+                    <HomeIcon className="h-6 hidden md:inline-flex cursor-pointer hover:scale-125 transition-transform-200 ease-out"
+                    onClick={()=>router.push("/")}/>
                     
                     {session ? (
                         <>
